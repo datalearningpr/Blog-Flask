@@ -1,0 +1,18 @@
+<div id="postlist" title="{{pageNo}}">
+    {% if (posts|length != 0) %}
+    {% for post in posts %}
+    <h2>
+        <a href="{{url_for('showPost', postId=post.id)}}">{{post.title}}</a>
+    </h2>
+    <p class="lead">
+        by <a href="\search\author\{{post.username}}">{{post.username}}</a>
+    </p>
+    <p style="display:inline; margin-right:20px"><span class="glyphicon glyphicon-time"></span> {{"Posted on " + post.timestamp.strftime('%Y-%m-%d %H:%M')}}</p>
+    <p style="display:inline"><span class="glyphicon glyphicon-tag"></span> {{post.category}}</p>
+    <hr>
+    <p>{{post.body}}</p>
+    <a class="btn btn-primary" href="{{url_for('showPost', postId=post.id)}}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+    <hr>
+    {% endfor %}
+    {% endif %}
+</div>
