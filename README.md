@@ -33,4 +33,5 @@ GPL
 ## Acknowledgments
 
 Markdown editor is using open source Editor.md
+
 Certain HTML templates are based on internet resources
